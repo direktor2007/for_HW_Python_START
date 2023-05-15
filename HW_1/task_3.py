@@ -5,18 +5,15 @@
 # *Пример:*
 #  385916 -> yes
 # 123456 -> no
-
-print('Введите шестизначное число')
-a = int(input())
-if a < 1000000 or a > 9999999:
-    print ("Число не шестизначное")
-b = a // 100000
-c = a % 100000 // 10000
-d = a % 10000 // 1000
-e = a % 1000 // 100
-f = a % 100 // 10
-g = a % 10
-if b + c + d == e + f + g
-    print("yes")
-elif b + c + d != e + f + g
-    print("no")    
+a = int(input('Введите номер билета: '))  
+sum_left = 0
+sum_right = 0
+for i in range(6):
+    if i < 3:
+        sum_right += a // 10**i % 10
+    else:
+        sum_left  += a // 10**i % 10 
+if sum_left == sum_right:
+    print('счастливый')
+else:
+    print('может повезет в следующий раз)))')  
